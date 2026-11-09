@@ -51,6 +51,7 @@ export function ConsultationForm() {
   const { language } = useLanguage();
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [trackingId, setTrackingId] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
 
   const {
@@ -81,15 +82,30 @@ export function ConsultationForm() {
     setSubmitting(true);
     setServerError(null);
     try {
-      const res = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, language }),
-      });
-      const json = await res.json();
-      if (!res.ok || !json.ok) {
-        throw new Error(json.error || "Request failed");
+      // Static site: simulate local submission (no server API).
+      // Persist request to localStorage so the client keeps a record.
+      const trackingId = `HEL-${Date.now().toString(36).toUpperCase()}`;
+      const stored = {
+        trackingId,
+        receivedAt: new Date().toISOString(),
+        language,
+        data,
+      };
+      try {
+        const existing = JSON.parse(
+          localStorage.getItem("helios-consultations") || "[]"
+        );
+        existing.push(stored);
+        localStorage.setItem(
+          "helios-consultations",
+          JSON.stringify(existing)
+        );
+      } catch {
+        // ignore storage errors
       }
+      // Brief artificial delay for nicer UX (spinner feedback)
+      await new Promise((r) => setTimeout(r, 700));
+      setTrackingId(trackingId);
       setSuccess(true);
       reset();
     } catch (err) {
@@ -191,10 +207,26 @@ export function ConsultationForm() {
                   <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-2">
                     {language === "ar" ? "تم استلام طلبك!" : "Request received!"}
                   </h3>
-                  <p className="text-muted-foreground max-w-md mb-6">{t.form.success}</p>
+                  <p className="text-muted-foreground max-w-md mb-3">{t.form.success}</p>
+                  {trackingId && (
+                    <div className="mb-6 px-4 py-2 rounded-lg bg-secondary/70 border border-border/60">
+                      <span className="text-xs text-muted-foreground me-2">
+                        {language === "ar" ? "رقم الطلب:" : "Request ID:"}
+                      </span>
+                      <span
+                        className="font-mono font-bold text-brand-primary"
+                        dir="ltr"
+                      >
+                        {trackingId}
+                      </span>
+                    </div>
+                  )}
                   <Button
                     variant="outline"
-                    onClick={() => setSuccess(false)}
+                    onClick={() => {
+                      setSuccess(false);
+                      setTrackingId(null);
+                    }}
                   >
                     {language === "ar" ? "إرسال طلب آخر" : "Submit another request"}
                   </Button>

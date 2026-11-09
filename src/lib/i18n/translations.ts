@@ -253,6 +253,40 @@ export const translations = {
       terms: "الشروط والأحكام",
     },
 
+    // Slider
+    slider: {
+      tag: "معرض الأعمال",
+      title: "محطات نُنفّذها بإتقان",
+      subtitle:
+        "نظرة على بعض محطات الطاقة الشمسية التي صمّمناها وركّبناها للمشاريع التجارية والصناعية في مصر.",
+      slides: [
+        {
+          title: "محطات الطاقة الكبيرة",
+          desc: "تصميم وتركيب محطات طاقة شمسية بقدرات تصل إلى عشرات الميجاوات مع أعلى معايير الكفاءة.",
+        },
+        {
+          title: "التركيب الاحترافي",
+          desc: "فرق هندسية معتمدة تركّب الألواح والهياكل بأعلى جودة وأدق المعايير الفنية الدولية.",
+        },
+        {
+          title: "أنظمة الألواح الشمسية",
+          desc: "ألواح فوتوفولتية من كبرى الشركات العالمية مثل LONGi وTrina مع ضمان حتى ٢٥ سنة.",
+        },
+        {
+          title: "لوحات التحكم والعاكسات",
+          desc: "عاكسات (Inverters) ذكية من Huawei وSMA مع لوحات تحكم وأنظمة مراقبة عن بُعد ٢٤/٧.",
+        },
+        {
+          title: "هياكل المواقف الشمسية",
+          desc: "حلول Canopy لمواقف السيارات تُولّد الكهرباء وتُوفّر ظلالاً للمركبات في آنٍ واحد.",
+        },
+      ],
+      prev: "السابق",
+      next: "التالي",
+      indicator: "شريحة",
+      of: "من",
+    },
+
     // Misc
     common: {
       languageSwitch: "English",
@@ -511,6 +545,40 @@ export const translations = {
       rights: "© 2026 Helios Solar Energy. All rights reserved.",
       policy: "Privacy Policy",
       terms: "Terms & Conditions",
+    },
+
+    // Slider
+    slider: {
+      tag: "Showcase",
+      title: "Power plants we deliver with precision",
+      subtitle:
+        "A glimpse of some of the solar power plants we have designed and installed for commercial and industrial projects across Egypt.",
+      slides: [
+        {
+          title: "Large-Scale Power Plants",
+          desc: "Design and installation of solar power plants with capacities reaching tens of megawatts, meeting the highest efficiency standards.",
+        },
+        {
+          title: "Professional Installation",
+          desc: "Certified engineering teams install panels and structures with the highest quality and most precise international technical standards.",
+        },
+        {
+          title: "Solar Panel Systems",
+          desc: "Photovoltaic panels from major global brands like LONGi and Trina, with warranties up to 25 years.",
+        },
+        {
+          title: "Control Panels & Inverters",
+          desc: "Smart inverters from Huawei and SMA with control panels and 24/7 remote monitoring systems.",
+        },
+        {
+          title: "Solar Carports",
+          desc: "Canopy solutions for parking lots that generate electricity while providing shade for vehicles at the same time.",
+        },
+      ],
+      prev: "Previous",
+      next: "Next",
+      indicator: "Slide",
+      of: "of",
     },
 
     // Misc

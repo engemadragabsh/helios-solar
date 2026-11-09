@@ -6,6 +6,7 @@ import { ClientStrip } from "@/components/site/ClientStrip";
 import { About } from "@/components/site/About";
 import { Services } from "@/components/site/Services";
 import { WhyUs } from "@/components/site/WhyUs";
+import { ImageSlider } from "@/components/site/ImageSlider";
 import { Projects } from "@/components/site/Projects";
 import { CostCalculator } from "@/components/site/CostCalculator";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
@@ -21,6 +22,7 @@ export default function Home() {
         <About />
         <Services />
         <WhyUs />
+        <ImageSlider />
         <Projects />
         <CostCalculator />
         <ConsultationForm />
