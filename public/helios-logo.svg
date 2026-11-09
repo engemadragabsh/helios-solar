@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="heliosGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#198754"/>
+      <stop offset="100%" stop-color="#0f5132"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5b50a"/>
+      <stop offset="100%" stop-color="#ffd966"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#heliosGrad)" stroke-width="3"/>
+  <circle cx="100" cy="100" r="36" fill="url(#sunGrad)"/>
+  <g stroke="url(#sunGrad)" stroke-width="6" stroke-linecap="round">
+    <line x1="100" y1="20" x2="100" y2="38"/>
+    <line x1="100" y1="162" x2="100" y2="180"/>
+    <line x1="20" y1="100" x2="38" y2="100"/>
+    <line x1="162" y1="100" x2="180" y2="100"/>
+    <line x1="44" y1="44" x2="56" y2="56"/>
+    <line x1="144" y1="144" x2="156" y2="156"/>
+    <line x1="156" y1="44" x2="144" y2="56"/>
+    <line x1="56" y1="144" x2="44" y2="156"/>
+  </g>
+</svg>
