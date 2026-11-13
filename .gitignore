@@ -52,3 +52,14 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Helios project specific
+/.zscripts/
+/download/
+/tests/
+/mini-services/
+/examples/
+/db/
+prisma/*.db
+prisma/*.db-journal
+public/slider/*.tmp
